@@ -1,3 +1,6 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  get 'team_name/create'
+  get 'team_name/show'
+
+  root to: 'team_name#create'
 end

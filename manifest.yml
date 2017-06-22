@@ -1,0 +1,5 @@
+---
+applications:
+- name: tv-signs
+  memory: 128M
+  buildpack: ruby_buildpack

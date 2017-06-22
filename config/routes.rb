@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  get 'create', to: 'team_name#create'
-  get 'show/:colour/:team_name', to: 'team_name#show'
-  get 'show/:team_name', to: 'team_name#show'
+  get  '/create', to: 'team_name#create'
+  post '/create', to: 'team_name#create_sign'
+
+  get  '/sign', to: 'team_name#sign'
+  get  '/sign/:team_name', to: 'team_name#sign'
+  get  '/sign/:team_name/:colour', to: 'team_name#sign'
 
   root to: 'team_name#create'
 end

@@ -1,0 +1,6 @@
+---
+applications:
+- name: tv-team-name
+  memory: 256M
+  host: tv-team-name
+  buildpack: ruby_buildpack

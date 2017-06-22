@@ -8,8 +8,9 @@
               <%= text_field_tag :team_name, '', class: 'form-control', placeholder: 'GOV.UK Signify' %>
             </div>
             <div class="form-group">
-              <%= label_tag :colour, 'Colour (optional)' %>
-              <%= text_field_tag :colour, '', class: 'form-control', placeholder: "red, #coffee" %>
+              <%= label_tag :colour, 'Background colour (optional)' %>
+              <a href="http://leaverou.github.io/contrast-ratio/#white-on-purple">How to check your colour choice is readable</a>
+              <%= text_field_tag :colour, '', class: 'form-control', placeholder: "purple" %>
             </div>
             <div class="text-center mt-5">
                 <%= submit_tag 'Signify!', class: 'btn btn-primary btn-lg' %> 

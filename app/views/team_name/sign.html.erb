@@ -1,12 +1,6 @@
-<style>
-  body {
-    background: <%= @colour %>;
-  }
-</style>
-
-<div class="row align-middle viewport-height-full">
-  <div class="col text-center my-auto">
-    <h1 class="align-middle my-auto text-white team-name txt-center">
+<div class="wrapper <%= @colour %>">
+  <div class="team-name">
+    <h1>
       <%= (@team_name.upcase == @team_name || @team_name.downcase == @team_name) ? @team_name.upcase : @team_name %>
     </h1>
   </div>

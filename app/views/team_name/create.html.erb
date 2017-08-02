@@ -2,30 +2,27 @@
   <h1 class="heading-large">Create your team sign</h1>
 
   <%= form_tag create_path, method: :post, class: 'form' do %>
-      <div class="form-group">
-        <%= label_tag :team_name, 'Team Name', class: 'form-label-bold' %>
-        <p class="form-hint">For example 'GOV.UK Signify'</p>
-        <%= text_field_tag :team_name, '', class: 'form-control' %>
-      </div>
+    <div class="form-group">
+      <%= label_tag :team_name, 'Team Name', class: 'form-label-bold' %>
+      <span class="form-hint">For example 'GOV.UK Signify'</span>
+      <%= text_field_tag :team_name, '', class: 'form-control' %>
+    </div>
 
-      <div class="form-group">
-        <legend class="form-label-bold">Sign colour</legend>
+    <div class="form-group">
+      <legend class="form-label-bold">Sign colour</legend>
 
-        <% @colour_palette.each do | colour | %>
-        <div class="multiple-choice">
+      <div class="swatch-wrapper">
+      <% @colour_palette.each do | colour | %>
+        <div class="colour-palette <%= colour %>">
           <input id="colour_palette_<%= colour %>" type="radio" name="colour" value="<%= colour %>">
-          <label for="colour_palette_<%= colour %>"><%= colour %></label>
+          <label for="colour_palette_<%= colour %>"><%= colour.gsub('-', ' ') %></label>
         </div>
-        <% end %>
+      <% end %>
+    </div>
 
-      </div>
-      <p>
-        <a href="http://leaverou.github.io/contrast-ratio/#white-on-purple">
-          How to check your colour choice is readable
-        </a>
-      </p>
-      <div class="form-group">
-          <%= submit_tag 'Create sign', class: 'button' %>
-      </div>
+    </div>
+    <div class="form-group">
+      <%= submit_tag 'Create sign', class: 'button' %>
+    </div>
   <% end %>
 </div>

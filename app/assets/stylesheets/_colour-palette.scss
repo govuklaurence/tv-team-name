@@ -1,0 +1,105 @@
+.colour-palette {
+  display: block;
+  float: left;
+  position: relative;
+
+  width: 120px;
+
+  background-color: transparent;
+
+  padding: 0;
+  margin-bottom: $gutter-one-third;
+
+  // Absolutely position inputs within label, to allow text to wrap
+  input {
+    position: absolute;
+    cursor: pointer;
+    left: 0;
+    top: 0;
+    width: 60px;
+    height: 60px;
+    z-index: 1;
+
+    // IE8 doesn’t support pseudoelements, so we don’t want to hide native elements there.
+    @if ($is-ie == false) or ($ie-version == 9) {
+      margin: 0;
+      @include opacity(0);
+    }
+  }
+
+  label {
+    cursor: pointer;
+    padding: 0 0 10px 0;
+    display: block;
+    text-align: center;
+
+    // remove 300ms pause on mobile
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+  }
+
+  [type=radio] + label::before {
+    content: "";
+    background: $black;
+    display: block;
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+
+
+    @include border-radius(50%);
+  }
+
+  [type=radio] + label::after {
+    content: "";
+    border: 20px solid #fff;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    @include border-radius(50%);
+    @include opacity(0);
+  }
+
+  // Focused state
+  [type=radio]:focus + label::before {
+    @include box-shadow(0 0 0 4px $focus-colour);
+  }
+
+  // Selected state
+  input:checked + label::after {
+    @include opacity(1);
+  }
+
+  // Disabled state
+  input:disabled {
+    cursor: default;
+  }
+
+  input:disabled + label {
+    @include opacity(0.5);
+    cursor: default;
+  }
+
+  &:last-child,
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+
+  &.purple [type=radio] + label::before { background-color: $purple; }
+  &.mauve [type=radio] + label::before { background-color: $mauve; }
+  &.fuschia [type=radio] + label::before { background-color: $fuschia; }
+  &.pink [type=radio] + label::before { background-color: $pink; }
+  &.baby-pink [type=radio] + label::before { background-color: $baby-pink; }
+  &.red [type=radio] + label::before { background-color: $red; }
+  &.mellow-red [type=radio] + label::before { background-color: $mellow-red; }
+  &.orange [type=radio] + label::before { background-color: $orange; }
+  &.brown [type=radio] + label::before { background-color: $brown; }
+  &.yellow [type=radio] + label::before { background-color: $yellow; }
+  &.grass-green [type=radio] + label::before { background-color: $grass-green; }
+  &.green [type=radio] + label::before { background-color: $green; }
+  &.turquoise [type=radio] + label::before { background-color: $turquoise; }
+  &.light-blue [type=radio] + label::before { background-color: $light-blue; }
+
+}

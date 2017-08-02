@@ -19,4 +19,13 @@ $path: "/public/images/";
 // Import all the govuk-elements partials listed in _govuk-elements.scss
 @import "govuk-elements";
 
+$toolkit-font-stack: $helvetica-regular;
+
+// Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+* {
+  font-family: $toolkit-font-stack !important;
+}
+
+
 @import "team_name";
+@import "colour-palette";

@@ -2,6 +2,22 @@ class TeamNameController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
+    @colour_palette = [
+      "purple",
+      "mauve",
+      "fuschia",
+      "pink",
+      "baby-pink",
+      "red",
+      "mellow-red",
+      "orange",
+      "brown",
+      "yellow",
+      "grass-green",
+      "green",
+      "turquoise",
+      "light-blue"
+    ]
   end
 
   def create_sign

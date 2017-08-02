@@ -1,14 +1,17 @@
-body, .wrapper {
+body {
   margin: 0;
   padding: 0;
+
+  font-family: $helvetica-regular;
 }
 
-.team-name {
+}
+
+.sign {
   height: 100vh;
 
   display: flex;
   align-items: center;
-  justify-content: center;
 
   margin: 0 10vw;
 

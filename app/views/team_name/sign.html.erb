@@ -1,7 +1,5 @@
-<div class="wrapper <%= @colour %>">
-  <div class="team-name">
-    <h1>
-      <%= (@team_name.upcase == @team_name || @team_name.downcase == @team_name) ? @team_name.upcase : @team_name %>
-    </h1>
-  </div>
-</div>
+<% content_for :body_class, "#{ @colour }" %>
+
+<h1>
+  <%= (@team_name.upcase == @team_name || @team_name.downcase == @team_name) ? @team_name.upcase : @team_name %>
+</h1>

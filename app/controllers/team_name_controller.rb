@@ -21,7 +21,8 @@ class TeamNameController < ApplicationController
   end
 
   def sign
-    @colour = params[:colour] || '#333'
+    @colour = params[:colour]
+    @page_title = "#{params[:team_name]} – "
     @team_name = params[:team_name].gsub('_', '.').gsub('__', '_')
   end
 end

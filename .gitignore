@@ -24,4 +24,3 @@ yarn.lock
 public/
 
 .ruby-version
-Gemfile.lock

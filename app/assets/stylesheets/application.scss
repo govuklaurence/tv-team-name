@@ -10,8 +10,22 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
 
-@import "bootstrap";
+// Path to assets for use with the file-url function
+// in the govuk frontend toolkit's url-helpers partial
+$path: "/public/images/";
+
+// Import all the govuk-elements partials listed in _govuk-elements.scss
+@import "govuk-elements";
+
+$toolkit-font-stack: $helvetica-regular;
+
+// Use the universal selector and !important to *ALWAYS OVERRIDE* GDS Transport
+* {
+  font-family: $toolkit-font-stack !important;
+}
+
+
+@import "team_name";
+@import "colour-palette";

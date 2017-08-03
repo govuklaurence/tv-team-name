@@ -1,7 +1,56 @@
-.viewport-height-full {
-  height: 100vh;
+body {
+  margin: 0;
+  padding: 0;
+
+  font-family: $helvetica-regular;
 }
 
-.team-name {
-  font-size: 10vw;
+.create {
+  margin: 20px;
 }
+
+.content {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.sign {
+  height: 100vh;
+
+  display: flex;
+  align-items: center;
+
+  padding: 0 10vw;
+
+  h1 {
+    font-family: $helvetica-regular;
+    font-size: 10vw;
+    font-weight: bold;
+    text-align: left;
+
+    color: $white;
+  }
+}
+
+.button {
+  @include core-19;
+}
+
+legend {
+  margin-bottom: $gutter-one-third;
+}
+
+.purple { background-color: $purple; }
+.mauve { background-color: $mauve; }
+.fuschia { background-color: $fuschia; }
+.pink { background-color: $pink; }
+.baby-pink { background-color: $baby-pink; }
+.red { background-color: $red; }
+.mellow-red { background-color: $mellow-red; }
+.orange { background-color: $orange; }
+.brown { background-color: $brown; }
+.yellow { background-color: $yellow; }
+.grass-green { background-color: $grass-green; }
+.green { background-color: $green; }
+.turquoise { background-color: $turquoise; }
+.light-blue { background-color: $light-blue; }

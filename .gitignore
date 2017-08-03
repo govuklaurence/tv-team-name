@@ -22,3 +22,6 @@ db/schema.rb
 
 yarn.lock
 public/
+
+.ruby-version
+Gemfile.lock

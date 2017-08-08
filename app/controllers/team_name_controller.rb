@@ -2,22 +2,6 @@ class TeamNameController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
 
   def create
-    @colour_palette = [
-      "purple",
-      "mauve",
-      "fuschia",
-      "pink",
-      "baby-pink",
-      "red",
-      "mellow-red",
-      "orange",
-      "brown",
-      "yellow",
-      "grass-green",
-      "green",
-      "turquoise",
-      "light-blue"
-    ]
   end
 
   def create_sign
@@ -40,5 +24,24 @@ class TeamNameController < ApplicationController
     @colour = params[:colour]
     @team_name = params[:team_name].gsub('_', '.').gsub('__', '_')
     @page_title = "#{params[:team_name].gsub('_', '.').gsub('__', '_')} – "
+  end
+  before_action :set_colours
+  def set_colours
+    @colour_palette = [
+      "purple",
+      "mauve",
+      "fuschia",
+      "pink",
+      "baby-pink",
+      "red",
+      "mellow-red",
+      "orange",
+      "brown",
+      "yellow",
+      "grass-green",
+      "green",
+      "turquoise",
+      "light-blue"
+    ]
   end
 end

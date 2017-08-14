@@ -1,5 +1,7 @@
 class TeamNameController < ApplicationController
   skip_before_action :verify_authenticity_token, only: [:create]
+  after_action :allow_iframe, only: :sign
+  before_action :set_colours
 
   def create
   end
@@ -33,7 +35,6 @@ class TeamNameController < ApplicationController
     @page_title = "#{params[:team_name].gsub('_', '.').gsub('__', '_')} – "
   end
 
-  before_action :set_colours
   def set_colours
     @colour_palette = [
       "purple",
@@ -51,5 +52,9 @@ class TeamNameController < ApplicationController
       "turquoise",
       "light-blue"
     ]
+  private
+
+  def allow_iframe
+    response.headers.except! 'X-Frame-Options'
   end
 end

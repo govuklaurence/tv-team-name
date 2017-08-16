@@ -52,8 +52,9 @@ class TeamNameController < ApplicationController
       "turquoise",
       "light-blue"
     ]
-  private
+  end
 
+  private
   def allow_iframe
     response.headers.except! 'X-Frame-Options'
   end
